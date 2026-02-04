@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # local apps
     'apps.accounts',
+    'apps.posts',
 ]
 
 REST_FRAMEWORK = {
