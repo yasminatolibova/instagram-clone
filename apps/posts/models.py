@@ -20,8 +20,8 @@ class Post(models.Model):
 
 
 class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='likes')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts.Like.user+')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='posts.Like.user+')
 
     class Meta:
         unique_together = ('user', 'post')
@@ -30,14 +30,14 @@ class Like(models.Model):
         return f"{self.user.username} likes {self.post.id}"
     
 
-class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    text = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
+# class Comment(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts.Comment.user+')
+#     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='posts.Comment.user+')
+#     text = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        ordering = ['-created_at']
+#     class Meta:
+#         ordering = ['-created_at']
 
-    def __str__(self):
-        return f"{self.user.username} commented on {self.post.id}"
+#     def __str__(self):
+#         return f"{self.user.username} commented on {self.post.id}"

@@ -1,8 +1,7 @@
 from django.contrib import admin
-from .models import Post, Like
 
 # Register your models here.
-
-admin.site.register(Post)
+from .models import Reel, Like
+admin.site.register(Reel)
 admin.site.register(Like)
-#admin.site.register(Comment)
+# admin.site.register(Comment)

@@ -41,10 +41,16 @@ INSTALLED_APPS = [
     # packages
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
+    'drf_yasg',
 
     # local apps
     'apps.accounts',
     'apps.posts',
+    'apps.chat',
+    'apps.reels',
+    'apps.story',
+    'apps.comment',
 ]
 
 REST_FRAMEWORK = {
@@ -53,6 +59,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',  # Filtering
+        'rest_framework.filters.SearchFilter',                # Searching
+        'rest_framework.filters.OrderingFilter',              # Ordering
+    ],
 }
 
 from datetime import timedelta
