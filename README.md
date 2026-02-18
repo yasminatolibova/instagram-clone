@@ -190,6 +190,6 @@ pip freeze > requirements.txt
 
 
 
-## 👩‍💻 Author
+## 👩🏼‍💻 Author
 
 Yasmina Tolibova
