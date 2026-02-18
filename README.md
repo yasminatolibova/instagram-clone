@@ -159,11 +159,17 @@ Swagger UI available at:
 ## 📂 Project Structure
 
 apps/
+
  ├── accounts/
+ 
  ├── posts/
+ 
  ├── comment/
+ 
  ├── story/
+ 
  ├── chat/
+ 
  ├──reels/
  
 
