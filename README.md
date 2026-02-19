@@ -44,56 +44,8 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-If requirements.txt doesn't exist:
-```
-pip install djangorestframework
-pip install djangorestframework-simplejwt
-pip install pillow
-pip install django-filter
-```
 
-Project and apps should be created:
-```
 
-django-admin startproject config .
-django-admin startapp apps
-py manage.py startapp accounts apps/accounts
-py manage.py startapp posts apps/posts
-py manage.py startapp reels apps/reels
-py manage.py startapp story apps/story
-py manage.py startapp chat apps/chat
-py manage.py startapp comment apps/comment
-```
-All the apps should be inserted to config/settings.py
-```
-INSTALLED APPS=[
-# packages
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'django_filters',
-    'drf_yasg',
-
-    # local apps
-    'apps.accounts',
-    'apps.posts',
-    'apps.chat',
-    'apps.reels',
-    'apps.story',
-    'apps.comment',
-]
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend',  
-        'rest_framework.filters.SearchFilter',                
-        'rest_framework.filters.OrderingFilter',              
-    ],
-}
-```
 
 The first thing after that filling models.py is crucial if not you cant makemigrations.
 Then register all the models 
@@ -182,10 +134,7 @@ apps/
 - Filtering, Search, Ordering
 - Separate comment app
 - Separate chat app
-Dont forget to add requirements.txt
-```
-pip freeze > requirements.txt
-```
+
 
 
 
